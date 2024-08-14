@@ -130,26 +130,27 @@ export default function Home() {
               <CardTitle>Upcoming Tasks</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-4">
-                {tasks.map((task: { title: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; date: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; time: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; }, index: Key | null | undefined) => (
-                  <div key={index} className="flex items-center gap-4">
-                    <div className="flex-1">
-                      <div className="font-semibold">{task.title}</div>
-                      <div className="text-sm text-muted-foreground">
-                        {task.date} at {task.time}
-                      </div>
-                    </div>
-                    <Button size="sm" variant="outline" onClick={() => editTask(index)}>
-                      <FilePenIcon className="h-4 w-4" />
-                      <span className="sr-only">Edit</span>
-                    </Button>
-                    <Button size="sm" variant="outline" onClick={() => deleteTask(index)}>
-                      <Trash2Icon className="h-4 w-4" />
-                      <span className="sr-only">Delete</span>
-                    </Button>
-                  </div>
-                ))}
-              </div>
+            <div className="grid gap-4">
+  {tasks.map((task: { title: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; date: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; time: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; }, index: number) => (
+    <div key={index} className="flex items-center gap-4">
+      <div className="flex-1">
+        <div className="font-semibold">{task.title}</div>
+        <div className="text-sm text-muted-foreground">
+          {task.date} at {task.time}
+        </div>
+      </div>
+      <Button size="sm" variant="outline" onClick={() => editTask(index)}>
+        <FilePenIcon className="h-4 w-4" />
+        <span className="sr-only">Edit</span>
+      </Button>
+      <Button size="sm" variant="outline" onClick={() => deleteTask(index)}>
+        <Trash2Icon className="h-4 w-4" />
+        <span className="sr-only">Delete</span>
+      </Button>
+    </div>
+  ))}
+</div>
+
             </CardContent>
           </Card>
         </div>
